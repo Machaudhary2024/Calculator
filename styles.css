@@ -6,7 +6,7 @@
 
 body {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    background: linear-gradient(135deg, #2d1b69 0%, #11001c 100%);
     min-height: 100vh;
     display: flex;
     align-items: center;
@@ -16,60 +16,89 @@ body {
 
 .container {
     width: 100%;
-    max-width: 400px;
+    max-width: 500px;
     margin: 0 auto;
 }
 
 .calculator {
-    background: rgba(255, 255, 255, 0.1);
-    backdrop-filter: blur(10px);
-    border-radius: 20px;
-    padding: 25px;
-    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
-    border: 1px solid rgba(255, 255, 255, 0.2);
+    background: #3a2c5a;
+    border-radius: 15px;
+    padding: 20px;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+    border: 2px solid #4a3c6a;
 }
 
 .display {
-    background: rgba(0, 0, 0, 0.3);
-    border-radius: 15px;
+    background: #2d1b4e;
+    border-radius: 10px;
     padding: 20px;
-    margin-bottom: 20px;
+    margin-bottom: 15px;
     text-align: right;
     min-height: 80px;
     display: flex;
-    flex-direction: column;
-    justify-content: center;
-}
-
-.previous-operand {
-    color: rgba(255, 255, 255, 0.7);
-    font-size: 1rem;
-    margin-bottom: 5px;
-    min-height: 1.2rem;
+    align-items: center;
+    justify-content: flex-end;
+    border: 2px solid #4a3c6a;
 }
 
 .current-operand {
     color: white;
-    font-size: 2rem;
+    font-size: 2.5rem;
     font-weight: bold;
     word-wrap: break-word;
     word-break: break-all;
 }
 
+.memory-buttons {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 8px;
+    margin-bottom: 15px;
+}
+
+.function-dropdowns {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 10px;
+    margin-bottom: 15px;
+}
+
+.dropdown-btn {
+    background: #4a3c6a;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    padding: 10px;
+    font-size: 0.9rem;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    transition: all 0.2s ease;
+}
+
+.dropdown-btn:hover {
+    background: #5a4c7a;
+}
+
+.dropdown-arrow {
+    font-size: 0.8rem;
+}
+
 .buttons {
     display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    gap: 15px;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 8px;
 }
 
 .btn {
     border: none;
-    border-radius: 15px;
-    font-size: 1.2rem;
+    border-radius: 8px;
+    font-size: 1rem;
     font-weight: bold;
     cursor: pointer;
     transition: all 0.2s ease;
-    min-height: 60px;
+    min-height: 50px;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -78,91 +107,88 @@ body {
 }
 
 .btn:hover {
-    transform: translateY(-2px);
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+    transform: translateY(-1px);
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.3);
 }
 
 .btn:active {
     transform: translateY(0);
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
 }
 
 .btn-number {
-    background: rgba(255, 255, 255, 0.9);
-    color: #333;
+    background: #4a3c6a;
+    color: white;
+    font-size: 1.2rem;
 }
 
 .btn-number:hover {
-    background: rgba(255, 255, 255, 1);
+    background: #5a4c7a;
 }
 
 .btn-operator {
-    background: linear-gradient(135deg, #ff6b6b, #ee5a24);
+    background: #6a4c9a;
     color: white;
+    font-size: 1.3rem;
 }
 
 .btn-operator:hover {
-    background: linear-gradient(135deg, #ff5252, #d63031);
+    background: #7a5caa;
 }
 
 .btn-equals {
-    background: linear-gradient(135deg, #00b894, #00a085);
+    background: #8e44ad;
     color: white;
+    font-size: 1.3rem;
 }
 
 .btn-equals:hover {
-    background: linear-gradient(135deg, #00a085, #00896b);
+    background: #9b59b6;
 }
 
 .btn-clear {
-    background: linear-gradient(135deg, #fdcb6e, #e17055);
+    background: #e74c3c;
     color: white;
 }
 
 .btn-clear:hover {
-    background: linear-gradient(135deg, #f39c12, #d63031);
+    background: #c0392b;
 }
 
 .btn-delete {
-    background: linear-gradient(135deg, #a29bfe, #6c5ce7);
+    background: #f39c12;
     color: white;
 }
 
 .btn-delete:hover {
-    background: linear-gradient(135deg, #8b7cf6, #5b4cdb);
+    background: #e67e22;
 }
 
-.span-two {
-    grid-column: span 2;
+.btn-function {
+    background: #34495e;
+    color: white;
+    font-size: 0.9rem;
+}
+
+.btn-function:hover {
+    background: #2c3e50;
+}
+
+.btn-memory {
+    background: #2c3e50;
+    color: #bdc3c7;
+    font-size: 0.8rem;
+    min-height: 35px;
+}
+
+.btn-memory:hover {
+    background: #34495e;
+    color: white;
 }
 
 /* Responsive Design */
-@media (max-width: 480px) {
+@media (max-width: 600px) {
     .container {
-        max-width: 320px;
-    }
-    
-    .calculator {
-        padding: 20px;
-    }
-    
-    .current-operand {
-        font-size: 1.8rem;
-    }
-    
-    .btn {
-        min-height: 50px;
-        font-size: 1.1rem;
-    }
-    
-    .buttons {
-        gap: 10px;
-    }
-}
-
-@media (max-width: 360px) {
-    .container {
-        max-width: 280px;
+        max-width: 400px;
     }
     
     .calculator {
@@ -170,16 +196,79 @@ body {
     }
     
     .current-operand {
-        font-size: 1.6rem;
+        font-size: 2rem;
     }
     
     .btn {
         min-height: 45px;
+        font-size: 0.9rem;
+    }
+    
+    .btn-number {
+        font-size: 1.1rem;
+    }
+    
+    .buttons {
+        gap: 6px;
+    }
+    
+    .memory-buttons {
+        gap: 6px;
+    }
+}
+
+@media (max-width: 480px) {
+    .container {
+        max-width: 350px;
+    }
+    
+    .calculator {
+        padding: 12px;
+    }
+    
+    .current-operand {
+        font-size: 1.8rem;
+    }
+    
+    .btn {
+        min-height: 40px;
+        font-size: 0.8rem;
+    }
+    
+    .btn-number {
         font-size: 1rem;
     }
     
     .buttons {
-        gap: 8px;
+        gap: 5px;
+    }
+    
+    .memory-buttons {
+        gap: 5px;
+    }
+    
+    .btn-memory {
+        min-height: 30px;
+        font-size: 0.7rem;
+    }
+    
+    .dropdown-btn {
+        font-size: 0.8rem;
+        padding: 8px;
+    }
+}
+
+@media (max-width: 360px) {
+    .buttons {
+        grid-template-columns: repeat(4, 1fr);
+    }
+    
+    .memory-buttons {
+        grid-template-columns: repeat(3, 1fr);
+    }
+    
+    .function-dropdowns {
+        grid-template-columns: 1fr;
     }
 }
 
@@ -194,8 +283,7 @@ body {
     animation: buttonPress 0.1s ease;
 }
 
-/* Keyboard indicator */
 .btn.keyboard-active {
-    background: rgba(255, 255, 255, 0.3) !important;
+    background: rgba(255, 255, 255, 0.2) !important;
     transform: scale(0.95);
 }
