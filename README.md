@@ -27,9 +27,6 @@ A modern, responsive scientific calculator built with HTML, CSS, and JavaScript.
 - Sign change (+/-)
 
 
-
-
-
 ### Memory Operations
 
 - **MC**: Memory Clear - Clears stored memory value
